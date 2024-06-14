@@ -19,20 +19,20 @@ void main(){
     useCase = GetRandomNumberTrivia(mockNumberTriviaRepository);
   });
 
-  final tNumber = 1;
-  final tNumberTrivia = NumberTrivia(text: "Test text", number: tNumber);
+  const tNumber = 1;
+  const tNumberTrivia = NumberTrivia(text: "Test text", number: tNumber);
 
   test(
     'Should get a random number trivia from repository',
     () async{
       //arrange
       when(mockNumberTriviaRepository.getRandomNumberTrivia())
-      .thenAnswer((_) async => Right(tNumberTrivia));
+      .thenAnswer((_) async => const Right(tNumberTrivia));
       //act
       final  result= await useCase(NoParams());
       //assert
       verify(mockNumberTriviaRepository.getRandomNumberTrivia());
-      expect(result, Right(tNumberTrivia));
+      expect(result, const Right(tNumberTrivia));
       verifyNoMoreInteractions(mockNumberTriviaRepository);
     }
   );

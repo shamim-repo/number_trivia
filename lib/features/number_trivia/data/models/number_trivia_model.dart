@@ -1,18 +1,11 @@
-
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
 
-class NumberTriviaModel extends NumberTrivia{
-
-  final String text;
-  final int number;
-
-  NumberTriviaModel({
-    required this.text,
-    required this.number
-  }) : super(text: text, number: number);
+class NumberTriviaModel extends NumberTrivia implements Equatable{
+  const NumberTriviaModel({
+    required super.text,
+    required super.number
+  });
 
   fromJson(Map<String, dynamic> json) {
     return NumberTriviaModel(
@@ -27,5 +20,4 @@ class NumberTriviaModel extends NumberTrivia{
       'number': number,
     };
   }
-
 }
