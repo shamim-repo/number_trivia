@@ -12,7 +12,7 @@ part 'number_trivia_event.dart';
 part 'number_trivia_state.dart';
 
 // ignore: constant_identifier_names
-const String SERVER_FAILURE_MESSAGE= 'Server Failure';
+const String SERVER_FAILURE_MESSaGE= 'Server Failure';
 // ignore: constant_identifier_names
 const String CACHE_FAILURE_MESSAGE= 'Cache Failure';
 // ignore: constant_identifier_names
@@ -67,7 +67,7 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
 
   String _mapFailureToMessage(Failure failure){
     switch(failure){
-      case ServerFailure _: return SERVER_FAILURE_MESSAGE;
+      case ServerFailure _: return SERVER_FAILURE_MESSaGE;
       case CacheFailure _: return CACHE_FAILURE_MESSAGE;
       default : return 'Unexpected Error';
     }

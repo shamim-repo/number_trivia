@@ -96,7 +96,7 @@ void main(){
         },
         build: () => bloc,
         act: (bloc) => bloc.add(const GetConcreteNumberTriviaEvent(numberString: numberString)),
-        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MESSAGE)]
+        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MESSaGE)]
     );
 
     blocTest<NumberTriviaBloc, NumberTriviaState>(
@@ -138,7 +138,7 @@ void main(){
         },
         build: () => bloc,
         act: (bloc) => bloc.add(GetRandomNumberTriviaEvent()),
-        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MESSAGE)]
+        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MESSaGE)]
     );
 
     blocTest<NumberTriviaBloc, NumberTriviaState>(
