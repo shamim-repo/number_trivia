@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-void main() {
+import 'package:number_trivia/injection_container.dart' as di;
+void main() async{
+  await di.init();
   runApp( const MaterialApp(
     home: Placeholder(),
   ));
