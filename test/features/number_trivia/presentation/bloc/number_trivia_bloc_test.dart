@@ -67,7 +67,7 @@ void main(){
         },
         build: () => bloc,
         act: (bloc) => bloc.add(const GetConcreteNumberTriviaEvent(numberString: numberString)),
-        expect: () => [const ErrorState(message: INVALID_INPUT_FAILURE_MASSEGE)]
+        expect: () => [const ErrorState(message: INVALID_INPUT_FAILURE_MESSAGE)]
     );
 
     blocTest<NumberTriviaBloc, NumberTriviaState>(
@@ -96,7 +96,7 @@ void main(){
         },
         build: () => bloc,
         act: (bloc) => bloc.add(const GetConcreteNumberTriviaEvent(numberString: numberString)),
-        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MASSEGE)]
+        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MESSAGE)]
     );
 
     blocTest<NumberTriviaBloc, NumberTriviaState>(
@@ -109,7 +109,7 @@ void main(){
         },
         build: () => bloc,
         act: (bloc) => bloc.add(const GetConcreteNumberTriviaEvent(numberString: numberString)),
-        expect: () => [LoadingState(),const ErrorState(message: CACHE_FAILURE_MASSEGE)]
+        expect: () => [LoadingState(),const ErrorState(message: CACHE_FAILURE_MESSAGE)]
     );
   });//GetConcreteNumberTrivia
 
@@ -138,7 +138,7 @@ void main(){
         },
         build: () => bloc,
         act: (bloc) => bloc.add(GetRandomNumberTriviaEvent()),
-        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MASSEGE)]
+        expect: () => [LoadingState(),const ErrorState(message: SERVER_FAILURE_MESSAGE)]
     );
 
     blocTest<NumberTriviaBloc, NumberTriviaState>(
@@ -149,7 +149,7 @@ void main(){
         },
         build: () => bloc,
         act: (bloc) => bloc.add(GetRandomNumberTriviaEvent()),
-        expect: () => [LoadingState(),const ErrorState(message: CACHE_FAILURE_MASSEGE)]
+        expect: () => [LoadingState(),const ErrorState(message: CACHE_FAILURE_MESSAGE)]
     );
   });//GetRandomNumberTrivia
 

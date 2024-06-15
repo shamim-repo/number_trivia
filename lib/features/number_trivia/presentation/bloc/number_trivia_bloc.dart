@@ -11,9 +11,12 @@ import '../../domain/use_cases/get_random_number_trivia.dart';
 part 'number_trivia_event.dart';
 part 'number_trivia_state.dart';
 
-const String SERVER_FAILURE_MASSEGE= 'Server Failure';
-const String CACHE_FAILURE_MASSEGE= 'Cache Failure';
-const String INVALID_INPUT_FAILURE_MASSEGE =
+// ignore: constant_identifier_names
+const String SERVER_FAILURE_MESSAGE= 'Server Failure';
+// ignore: constant_identifier_names
+const String CACHE_FAILURE_MESSAGE= 'Cache Failure';
+// ignore: constant_identifier_names
+const String INVALID_INPUT_FAILURE_MESSAGE =
     'Invalid Input- The number must be zero or an integer';
 
 class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
@@ -31,7 +34,7 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
           event.numberString);
       await convertedNumber.fold(
               (failure){
-            emit(const ErrorState(message: INVALID_INPUT_FAILURE_MASSEGE));
+            emit(const ErrorState(message: INVALID_INPUT_FAILURE_MESSAGE));
           },
               (number) async {
             emit(LoadingState());
@@ -64,8 +67,8 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
 
   String _mapFailureToMessage(Failure failure){
     switch(failure){
-      case ServerFailure _: return SERVER_FAILURE_MASSEGE;
-      case CacheFailure _: return CACHE_FAILURE_MASSEGE;
+      case ServerFailure _: return SERVER_FAILURE_MESSAGE;
+      case CacheFailure _: return CACHE_FAILURE_MESSAGE;
       default : return 'Unexpected Error';
     }
   }
