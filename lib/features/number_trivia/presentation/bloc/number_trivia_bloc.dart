@@ -29,8 +29,8 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
     on<GetConcreteNumberTriviaEvent>((event, emit) async {
       final convertedNumber = inputConverter.stringToUnsignedInteger(
           event.numberString);
-      convertedNumber.fold(
-              (failure) {
+      await convertedNumber.fold(
+              (failure){
             emit(const ErrorState(message: INVALID_INPUT_FAILURE_MASSEGE));
           },
               (number) async {
