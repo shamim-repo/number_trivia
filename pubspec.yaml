@@ -21,7 +21,7 @@ dependencies:
   #Functional programming
   dartz: ^0.10.1
   #Remote api
-  connectivity_plus: ^6.0.3
+  data_connection_checker_nulls: ^0.0.2
   http: ^1.2.1
   #Local shared_preferences:
   shared_preferences: ^2.2.3
@@ -38,6 +38,7 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   build_runner: ^2.4.11
   mockito: ^5.4.4
+  bloc_test: ^9.1.7
 
 
 # The following section is specific to Flutter packages.

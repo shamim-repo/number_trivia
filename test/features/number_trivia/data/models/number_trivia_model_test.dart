@@ -25,7 +25,7 @@ void main(){
          //arrange
           final Map<String, dynamic> json = jsonDecode(fixture('trivia.json'));
          //act
-         final result = tNumberTriviaModel.fromJson(json);
+         final result = NumberTriviaModel.fromJson(json);
          //assert
          expect(result, tNumberTriviaModel);
        }
@@ -37,7 +37,7 @@ void main(){
            //arrange
            final Map<String, dynamic> json = jsonDecode(fixture('trivia_double.json'));
            //act
-           final result = tNumberTriviaModel.fromJson(json);
+           final result = NumberTriviaModel.fromJson(json);
            //assert
            expect(result, tNumberTriviaModel);
          }
